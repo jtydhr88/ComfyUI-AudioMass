@@ -1,0 +1,15 @@
+[project]
+name = "ComfyUI-AudioMass"
+description = "ComfyUI-OpenCut is a ComfyUI plugin that integrated AudioMass into ComfyUI"
+version = "0.1.0"
+license = {file = "LICENSE"}
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/jtydhr88/ComfyUI-AudioMass"
+#  Used by Comfy Registry https://comfyregistry.org
+[tool.comfy]
+PublisherId = "jtydhr88"
+DisplayName = "ComfyUI AudioMass"
+Icon = ""
+includes = ['js']
