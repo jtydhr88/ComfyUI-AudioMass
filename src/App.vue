@@ -14,6 +14,10 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import {useI18n} from "vue-i18n";
+
+const { t } = useI18n()
+
 const viewerContentRef = ref<HTMLDivElement>()
 const mainContentRef = ref<HTMLDivElement>()
 const maximized = ref(false)
@@ -35,6 +39,7 @@ watch(maximized, () => {
 })
 
 onMounted(async () => {
+  console.log(t("audiomass.title"))
   if (viewerContentRef.value) {
     updateParentClass()
 
