@@ -20,7 +20,6 @@ A ComfyUI plugin that seamlessly integrates the powerful [AudioMass](https://git
   - Auto-tune
   - Various audio filters
 - **💾 Multiple Format Support** - Export to MP3, WAV, and FLAC formats
-- **🌍 Internationalization** - Multi-language support
 - **📊 Waveform Visualization** - Visual audio waveform display for precise editing
 - **🎙️ Recording Support** - Record audio directly in the interface
 - **🔧 ComfyUI Integration** - Seamless integration with ComfyUI nodes
