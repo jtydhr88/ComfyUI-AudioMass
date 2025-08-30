@@ -53,7 +53,7 @@ let wd = (function() {
     let match = /[^\/]+$/.exec(url);
     return match !== null ?
         url.slice(0, match.index) :
-        '';
+        '/audiomass/';
 })();
 
 let growMemoryTo = function(wasmInstance, byteLength) {

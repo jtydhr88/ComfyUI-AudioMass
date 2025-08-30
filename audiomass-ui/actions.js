@@ -813,13 +813,13 @@
 			
 
 			if (format === 'mp3') {
-				worker = new Worker('lame.js');
+				worker = new Worker('/audiomass/lame.js');
 			}
 			else if (format === 'flac') {
-				worker = new Worker('flac.js');
+				worker = new Worker('/audiomass/flac.js');
 			}
 			else {
-				worker = new Worker('wav.js');
+				worker = new Worker('/audiomass/wav.js');
 			}
 
 			var originalBuffer = wavesurfer.backend.buffer;

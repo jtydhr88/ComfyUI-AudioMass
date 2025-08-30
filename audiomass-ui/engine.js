@@ -272,7 +272,7 @@
 
 				app.fireEvent ('RequestZoomUI', 0);
 				q.is_ready = false;
-				wavesurfer.load ('test.mp3');
+				wavesurfer.load ('/audiomass/test.mp3');
 			}, 180);
 		}
 		this.LoadURL = function ( url ) {
@@ -1965,7 +1965,7 @@
                 noisernn_load
                     ? b()
                     : ((a = document.createElement("script")),
-                      (a.src = "rnn_denoise.js"),
+                      (a.src = "/audiomass/rnn_denoise.js"),
                       (a.onload = function () {
                           noisernn_load = !0;
                           var f = function () {

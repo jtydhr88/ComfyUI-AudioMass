@@ -1,6 +1,9 @@
 // FLAC worker for encoding audio using libflac.js
 
-importScripts('libflac.js');
+// Set the FLAC script location for finding wasm files
+self.FLAC_SCRIPT_LOCATION = '/audiomass/';
+
+importScripts('/audiomass/libflac.js');
 
 var flacEncoder;
 var FLAC_INITIALIZED = false;

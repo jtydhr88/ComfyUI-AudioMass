@@ -1,12 +1,12 @@
 {
   "name": "Audiomass - Audio Editor",
   "short_name": "Audiomass - Audio Editor",
-  "start_url": ".",
-  "scope": ".",
+  "start_url": "/audiomass/",
+  "scope": "/audiomass/",
   "display": "standalone",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/audiomass/icon.png",
       "type": "image/png",
       "sizes": "144x144"
     }
