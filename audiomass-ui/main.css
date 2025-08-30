@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/audiomass/fonts/icomoon.eot');
-  src:  url('/audiomass/fonts/icomoon.eot#iefix') format('embedded-opentype'),
-    url('/audiomass/fonts/icomoon.ttf') format('truetype'),
-    url('/audiomass/fonts/icomoon.woff') format('woff'),
-    url('/audiomass/fonts/icomoon.svg#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot');
+  src:  url('fonts/icomoon.eot#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
