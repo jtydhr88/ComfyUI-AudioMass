@@ -12301,7 +12301,7 @@ const hv = /* @__PURE__ */ Hr({
   },
   zh: {
     audiomass: {
-      title: "AudioMass"
+      title: "AudioMass编辑器"
     }
   }
 }, _v = ov({
@@ -12311,7 +12311,7 @@ const hv = /* @__PURE__ */ Hr({
   messages: yv
 }), { ComfyButton: Sv } = window.comfyAPI.button;
 let no = null, er = null, tr = null, hr = null, va = "", ya = !1;
-const Ev = ["LoadAudio"], Tv = ["PreviewAudio", "SaveAudio", "SaveAudioMP3", "SaveAudioOpus"];
+const Ev = ["LoadAudio"], Tv = ["PreviewAudio"];
 function zc() {
   return er && tr || (er = document.createElement("div"), er.id = "audiomass-root", document.body.appendChild(er), no = bp(vv), no.use(_v), no.use(Tm, {
     theme: {}

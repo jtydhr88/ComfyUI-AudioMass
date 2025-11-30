@@ -8,7 +8,7 @@ const messages = {
   },
   zh: {
     audiomass: {
-      title: 'AudioMass'
+      title: 'AudioMass编辑器'
     }
   }
 }

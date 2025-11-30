@@ -52,10 +52,8 @@ const handleSaveToComfyUI = async (blob: Blob, format: string) => {
   return { success: false, error: 'No save callback registered' }
 }
 
-// Watch for appRef to become available
 watch(appRef, (newAppRef) => {
   if (newAppRef) {
-    // Set up save handler
     newAppRef.setSaveHandler(handleSaveToComfyUI)
 
     if (pendingAudioLoad.value) {
