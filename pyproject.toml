@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI-AudioMass"
 description = "ComfyUI-OpenCut is a ComfyUI plugin that integrated AudioMass into ComfyUI"
-version = "0.2.0"
+version = "0.3.0"
 license = {file = "LICENSE"}
 dependencies = []
 
