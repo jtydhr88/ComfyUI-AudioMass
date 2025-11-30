@@ -1,8 +1,9 @@
 {
-  "peerDependencies": {
-    "primevue": "^4.2.5",
+  "dependencies": {
     "vue": "^3.5.13",
-    "vue-i18n": "^9.14.3"
+    "vue-i18n": "^9.14.3",
+    "primevue": "^4.2.5",
+    "@primevue/themes": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",

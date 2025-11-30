@@ -8,6 +8,9 @@ export default defineConfig({
         vue(),
         vueDevTools()
     ],
+    define: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+    },
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -15,7 +18,7 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: './src/main.js',
+            entry: './src/main.ts',
             formats: ['es'],
             fileName: 'main'
         },
@@ -25,10 +28,6 @@ export default defineConfig({
                 '../../../scripts/api.js',
                 '../../../scripts/domWidget.js',
                 '../../../scripts/utils.js',
-                'vue',
-                'vue-i18n',
-                /^primevue\/?.*/,
-                /^@primevue\/themes\/?.*/,
             ],
             output: {
                 dir: 'js',
