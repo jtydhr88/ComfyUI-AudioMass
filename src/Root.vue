@@ -9,16 +9,21 @@
     :draggable="false"
     content-class="h-full"
   >
-    <App />
+    <App ref="appRef" />
   </Dialog>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
 import Dialog from 'primevue/dialog'
 import App from './App.vue'
 
+type SaveCallback = (blob: Blob, format: string) => Promise<{ success: boolean; path?: string; error?: string }>
+
 const visible = ref(false)
+const appRef = ref<InstanceType<typeof App> | null>(null)
+const pendingAudioLoad = ref<{ url: string; filename: string } | null>(null)
+const saveCallback = ref<SaveCallback | null>(null)
 
 const open = () => {
   visible.value = true
@@ -28,11 +33,45 @@ const close = () => {
   visible.value = false
 }
 
+const loadAudioFromUrl = (url: string, filename: string) => {
+  if (appRef.value) {
+    appRef.value.loadAudioFromUrl(url, filename)
+  } else {
+    pendingAudioLoad.value = { url, filename }
+  }
+}
+
+const setSaveCallback = (callback: SaveCallback) => {
+  saveCallback.value = callback
+}
+
+const handleSaveToComfyUI = async (blob: Blob, format: string) => {
+  if (saveCallback.value) {
+    return await saveCallback.value(blob, format)
+  }
+  return { success: false, error: 'No save callback registered' }
+}
+
+// Watch for appRef to become available
+watch(appRef, (newAppRef) => {
+  if (newAppRef) {
+    // Set up save handler
+    newAppRef.setSaveHandler(handleSaveToComfyUI)
+
+    if (pendingAudioLoad.value) {
+      nextTick(() => {
+        newAppRef.loadAudioFromUrl(pendingAudioLoad.value!.url, pendingAudioLoad.value!.filename)
+        pendingAudioLoad.value = null
+      })
+    }
+  }
+})
+
 onMounted(() => {
   visible.value = true
 })
 
-defineExpose({ open, close })
+defineExpose({ open, close, loadAudioFromUrl, setSaveCallback })
 </script>
 
 <style>

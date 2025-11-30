@@ -42,7 +42,7 @@ import './lz4-block-codec-wasm.js';
 if (typeof PKAudioEditor !== 'undefined' && PKAudioEditor.init) {
   window.addEventListener('DOMContentLoaded', () => {
     const editor = PKAudioEditor.init('app');
-    
+
     // Register service worker if available
     if ('serviceWorker' in navigator) {
       try {
@@ -51,5 +51,6 @@ if (typeof PKAudioEditor !== 'undefined' && PKAudioEditor.init) {
         console.error('Service worker registration failed:', error);
       }
     }
+
   });
 }
